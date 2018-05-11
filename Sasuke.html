@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sasuke</title>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+    <link rel="stylesheet" href="css/sakura.css">
+</head>
+<body>
+    <div id="sakura">
+        {{message}}
+    </div>
+    <div id="app">
+        <span v-bind:title="message">云想衣裳花想容</span>
+    </div>
+    <div id="appIf">
+        <span v-if="seen">十步杀一人，千里不留行。</span>
+    </div>
+     <div id="appList">
+         <ul>
+             <li v-for="item in items">{{item.txt}}</li>
+         </ul>
+     </div>
+    <div id="appModel">
+        <p>{{message}}</p>
+        <input type="text" v-model='message'>
+    </div>
+</body>
+<script type="text/javascript">
+    //声明式渲染
+     var sakura=new Vue({
+         el:"#sakura",
+         data:{
+             message:'Hello Vue!'
+         }
+     })
+    //v-bind 绑定元素属性
+    var app=new Vue({
+        el:"#app",
+        data:{
+            message:'您在'+new Date().toLocaleDateString()
+        }
+    })
+    //条件指令 v-if
+    var appIf=new Vue({
+        el:"#appIf",
+        data:{
+            seen:true
+        }
+
+    })
+    //列表循环
+    var appList=new Vue({
+        el:"#appList",
+        data:{
+            items:[
+                {txt:'宇智波佐助'},
+                {txt:'赤司征十郎'}
+            ]
+        }
+    })
+    //双向绑定
+     var appModel=new Vue({
+         el:"#appModel",
+         data:{
+             message:'Hello Vue!'
+         }
+     })
+
+
+
+
+
+</script>
+</html>

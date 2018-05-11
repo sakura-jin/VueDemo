@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+div{
+    border: 1px solid purple;
+    width: 500px;
+    margin: auto;
+    height: 60px;
+    text-align: center;
+}
+ul li{
+    list-style: none;
+}
